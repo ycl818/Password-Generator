@@ -4,22 +4,12 @@ function sample(collection) {
   return collection[randomIndex];
 }
 
-function generatePassword() {
+function generatePassword(options) {
   // defiine things user might want..
   const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
   const upperCaseLetters = lowerCaseLetters.toLocaleUpperCase();
   const numbers = "1234567890";
   const symbols = '`~!@$%^&*()-_+={}[]|;:"<>,.?/';
-
-  // define dummy data
-  const options = {
-    length: "12",
-    lowercase: "on",
-    uppercase: "on",
-    numbers: "on",
-    excludeCharacters: "13579",
-  };
-  console.log("options", options);
 
   // create a collection to store things user picked up
   let collection = [];
@@ -52,10 +42,9 @@ function generatePassword() {
   for (let i = 1; i <= options.length; i++) {
     password += sample(collection);
   }
-  console.log("password", password);
 
   // return password
-  console.log("This func will generate password");
+  return password;
 }
 
-generatePassword();
+module.exports = generatePassword;
