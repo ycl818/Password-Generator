@@ -11,7 +11,7 @@ function generatePassword() {
     lowercase: "on",
     uppercase: "on",
     numbers: "on",
-    excludeCharacters: "dd",
+    excludeCharacters: "13579",
   };
   console.log("options", options);
 
@@ -34,9 +34,14 @@ function generatePassword() {
     collection = collection.concat(symbols.split(""));
   }
 
-  console.log(collection);
   // remove things user do not need
+  if (options.excludeCharacters) {
+    collection = collection.filter(
+      (character) => !options.excludeCharacters.includes(character)
+    );
+  }
 
+  console.log(collection);
   // start generating password
 
   // return password
