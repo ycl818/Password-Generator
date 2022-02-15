@@ -1,3 +1,9 @@
+// sample an element in collection
+function sample(collection) {
+  let randomIndex = Math.floor(Math.random() * collection.length);
+  return collection[randomIndex];
+}
+
 function generatePassword() {
   // defiine things user might want..
   const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -41,8 +47,12 @@ function generatePassword() {
     );
   }
 
-  console.log(collection);
   // start generating password
+  let password = "";
+  for (let i = 1; i <= options.length; i++) {
+    password += sample(collection);
+  }
+  console.log("password", password);
 
   // return password
   console.log("This func will generate password");
