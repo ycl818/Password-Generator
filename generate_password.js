@@ -36,6 +36,9 @@ function generatePassword(options) {
       (character) => !options.excludeCharacters.includes(character)
     );
   }
+  if (collection.length === 0) {
+    return "There is no vaild characters in your selection";
+  }
 
   // start generating password
   let password = "";
