@@ -6,9 +6,9 @@ function sample(collection) {
 
 function generatePassword(options) {
   // defiine things user might want..
-  const lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+  const lowerCaseLetters = "love";
   const upperCaseLetters = lowerCaseLetters.toLocaleUpperCase();
-  const numbers = "1234567890";
+  const numbers = "5201314";
   const symbols = '`~!@$%^&*()-_+={}[]|;:"<>,.?/';
 
   // create a collection to store things user picked up
